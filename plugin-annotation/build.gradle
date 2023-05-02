@@ -1,11 +1,33 @@
-apply plugin: 'com.android.library'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'
+    }
+}
+
+allprojects {
+    apply plugin: 'com.android.library'
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
 
 android {
-    compileSdkVersion androidVersions.compileSdkVersion
+    compileSdkVersion 31
 
     defaultConfig {
-        minSdkVersion androidVersions.minSdkVersion
-        targetSdkVersion androidVersions.targetSdkVersion
+        minSdkVersion 14
+        targetSdkVersion 31
+
+        group 'org.maplibre.gl'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,15 +45,11 @@ android {
 }
 
 dependencies {
-    implementation dependenciesList.supportAppcompatV7
-    implementation dependenciesList.mapLibreAndroidSdk
-    javadocDeps dependenciesList.mapLibreAndroidSdk
-    testImplementation dependenciesList.junit
-    testImplementation dependenciesList.mockito
-    testImplementation dependenciesList.robolectric
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'org.maplibre.gl:android-sdk:9.4.2'
+    javadocDeps 'org.maplibre.gl:android-sdk:9.4.2'
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.mockito:mockito-inline:2.23.4"
+    testImplementation "org.robolectric:robolectric:3.8"
 }
 
-apply from: "${rootDir}/gradle/javadoc.gradle"
-apply from: "${rootDir}/gradle/publish.gradle"
-apply from: "${rootDir}/gradle/checkstyle.gradle"
-apply from: "${rootDir}/gradle/nitpick.gradle"
