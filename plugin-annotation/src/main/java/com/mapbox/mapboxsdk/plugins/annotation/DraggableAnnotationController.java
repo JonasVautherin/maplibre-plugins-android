@@ -98,13 +98,9 @@ final class DraggableAnnotationController {
     }
 
     void onAnnotationUpdated(Annotation annotation) {
-        if (annotation == draggedAnnotation) {
-            stopDragging(draggedAnnotation, draggedAnnotationManager);
-        }
     }
 
     void onSourceUpdated() {
-        stopDragging(draggedAnnotation, draggedAnnotationManager);
     }
 
     boolean onMoveBegin(MoveGestureDetector detector) {
