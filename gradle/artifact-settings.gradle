@@ -26,7 +26,7 @@ def isSnapshot() {
 }
 
 private static def getReleaseVersion(String version) {
-    return version.substring(1)
+    return 0//version.substring(1)
 }
 
 private static def getSnapshotVersion(String version) {
