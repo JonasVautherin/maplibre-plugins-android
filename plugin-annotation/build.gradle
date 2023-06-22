@@ -47,8 +47,8 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'org.maplibre.gl:android-sdk:9.4.2'
-    javadocDeps 'org.maplibre.gl:android-sdk:9.4.2'
+    implementation 'org.maplibre.gl:android-sdk:10.0.2'
+    javadocDeps 'org.maplibre.gl:android-sdk:10.0.2'
     testImplementation "junit:junit:4.12"
     testImplementation "org.mockito:mockito-inline:2.23.4"
     testImplementation "org.robolectric:robolectric:3.8"
